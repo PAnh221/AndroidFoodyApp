@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:columnCount="8"
+        android:rowCount="1"
+        android:background="#cccccc">
+        <Button
+            android:layout_width="60dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:drawableLeft="@drawable/thu_nho"
+            ></Button>
+        <TextView
+            android:text="CHIA SẺ"
+            android:layout_gravity="center"
+            android:layout_columnWeight="7"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black" />
+    </GridLayout>
+    <TextView
+        android:text="Chọn phương tiện chia sẻ"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_height="120dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="5dp"
+            android:layout_columnWeight="1"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:text="Instagram"></Button>
+
+        <Button
+            android:layout_height="120dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_columnWeight="1"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:text="Zalo"></Button>
+
+        <Button
+            android:layout_height="120dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="5dp"
+            android:layout_columnWeight="1"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:text="Messenger"></Button>
+
+        <Button
+            android:layout_height="120dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_columnWeight="1"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:text="Facebook"></Button>
+    </GridLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="Hủy bỏ"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFCC00"
+        android:layout_marginTop="3dp"></Button>
+</LinearLayout>

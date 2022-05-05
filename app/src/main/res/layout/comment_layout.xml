@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:columnCount="8"
+        android:rowCount="1"
+        android:background="#cccccc">
+        <Button
+            android:layout_width="60dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:drawableLeft="@drawable/thu_nho"
+            ></Button>
+        <TextView
+            android:text="VIẾT BÌNH LUẬN"
+            android:layout_gravity="center"
+            android:layout_columnWeight="7"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black" />
+    </GridLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:drawableLeft="@drawable/location"
+        android:text="1024, Phạm Văn Đồng, Hiệp Bình Chánh, Thủ Đức, TP. Hồ Chí Minh"
+        android:gravity="left"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFCC00"
+        android:background="@color/white"
+        android:layout_marginTop="5dp">
+    </Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:paddingLeft="20dp"
+        android:text="Tiêu đề của bài viết"
+        android:textSize="22sp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:paddingLeft="20dp"
+        android:text="Nội dung của bài viết"
+        android:textSize="22sp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:columnCount="3"
+        android:rowCount="1"
+        android:background="#cccccc">
+        <Button
+            android:layout_columnWeight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:drawableBottom="@drawable/them_anh"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:layout_marginRight="4dp"></Button>
+        <Button
+            android:layout_columnWeight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:drawableBottom="@drawable/hash_tag"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:layout_marginRight="4dp"></Button>
+        <Button
+            android:layout_columnWeight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:drawableBottom="@drawable/share"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"></Button>
+
+    </GridLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="Đăng tải"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFCC00"
+        android:layout_marginTop="3dp"></Button>
+
+</LinearLayout>

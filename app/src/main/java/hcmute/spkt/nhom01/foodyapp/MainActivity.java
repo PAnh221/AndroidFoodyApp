@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Database database;
-
-    Button txtsignup;
+    EditText edtusername, edtpassword;
+    Button txtsignup, btnlogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         txtsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                Intent intent = new Intent(MainActivity.this, MainLayoutActivity.class);
                 startActivity(intent);
             }
         });
