@@ -15,50 +15,53 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Database database;
-    EditText edtusername, edtpassword;
-    Button txtsignup, btnlogin;
+    EditText edtUsername, edtPassword;
+    Button btnCreateAccount, btnLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        EditText edtusername = (EditText) findViewById(R.id.edtusername);
-        EditText edtpassword = (EditText) findViewById(R.id.edtpassword);
-        TextView txtsignup = (TextView) findViewById(R.id.createaccount);
-        Button btnlogin = (Button) findViewById(R.id.loginbtn);
+        EditText edtUsername = (EditText) findViewById(R.id.edtUsername);
+        EditText edtPassword = (EditText) findViewById(R.id.edtPassword);
+        TextView btnCreateAccount = (TextView) findViewById(R.id.btnCreateAccount);
+        Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
         database = new Database(this, "foody.sqlite", null, 1);
 
         database.QueryData("CREATE TABLE IF NOT EXISTS User(username VARCHAR(200) PRIMARY KEY, password VARCHAR(200), role INTEGER)");
 //        database.QueryData("INSERT INTO User VALUES ('phianh', 'phianh', 1)");
 
-        txtsignup.setOnClickListener(new View.OnClickListener() {
+        btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainLayoutActivity.class);
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(intent);
             }
         });
 
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usrname = edtusername.getText().toString().trim();
-                String password = edtpassword.getText().toString().trim();
+                String usrname = edtUsername.getText().toString().trim();
+                String password = edtPassword.getText().toString().trim();
 
                 Cursor cursor = database.GetData("SELECT * FROM User WHERE username = '" + usrname + "'");
                 if (!cursor.moveToFirst()) {
-                    Toast.makeText(MainActivity.this, "Sai tài khoản/mật khẩu", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Tài khoản không tồn tại", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     if (password.equals(cursor.getString(1).trim())) {
-                        Toast.makeText(MainActivity.this, "OK", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(MainActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, MainLayoutActivity.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "Mật khẩu không chính xác", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
     }
-
 }

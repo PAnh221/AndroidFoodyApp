@@ -22,7 +22,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtusername"
+        android:id="@+id/edtUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
@@ -39,10 +39,10 @@
         android:textColorHint="@color/white" />
 
     <EditText
-        android:id="@+id/edtpassword"
+        android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edtusername"
+        android:layout_below="@id/edtUsername"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -57,10 +57,10 @@
         android:textColorHint="@color/white" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/loginbtn"
+        android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edtpassword"
+        android:layout_below="@id/edtPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -70,10 +70,10 @@
         android:text="ĐĂNG NHẬP" />
 
     <TextView
-        android:id="@+id/forgotpass"
+        android:id="@+id/txtForgotPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loginbtn"
+        android:layout_below="@id/btnLogin"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="-2dp"
@@ -83,10 +83,10 @@
         android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/createaccount"
+        android:id="@+id/btnCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/forgotpass"
+        android:layout_below="@id/txtForgotPass"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="11dp"
