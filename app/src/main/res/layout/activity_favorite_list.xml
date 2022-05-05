@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="0dp"
+        android:columnCount="8"
+        android:rowCount="1"
+        android:background="#FFCC00">
+        <Button
+            android:layout_width="50dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:drawableLeft="@drawable/ic_baseline_info_24"
+            ></Button>
+        <TextView
+            android:text="Đã lưu"
+            android:layout_gravity="center"
+            android:layout_columnWeight="7"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"/>
+
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#E2EDDE">
+
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:padding="10dp"-->
+        <!--            android:src="@mipmap/ic_launcher"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#dc9e1a"
+                app:backgroundTint="#46B842"
+
+                android:text="Tất cả"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00c853"
+                app:backgroundTint="#46B842"
+
+                android:text="Địa điểm" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#1E2273"
+                app:backgroundTint="#46B842"
+
+                android:text="Hình ảnh" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#dc1a8b"
+                app:backgroundTint="#46B842"
+                android:text="Bài viết"
+                android:textSize="13dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+            android:gravity="left"
+            android:text="Nhà hàng A"></Button>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+            android:text="Nhà hàng B"
+            android:gravity="left"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:background="@color/white"
+            android:layout_marginTop="5dp">
+        </Button>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+            android:text="Nhà hàng C"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:gravity="left"
+            android:background="@color/white"
+            android:layout_marginTop="5dp">
+        </Button>
+        <!--        <Button-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:drawableLeft="@drawable/logout"-->
+        <!--            android:text="Đăng xuất"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            app:backgroundTint="#FFCC00"-->
+        <!--            android:gravity="left"-->
+        <!--            android:background="@color/white"-->
+        <!--            android:layout_marginTop="5dp">-->
+    </LinearLayout>
+
+</LinearLayout>

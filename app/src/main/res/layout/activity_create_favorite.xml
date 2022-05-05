@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:columnCount="8"
+        android:rowCount="1"
+        android:background="#FFCC00">
+        <Button
+            android:layout_width="50dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            app:backgroundTint="#FFCC00"
+            android:drawableLeft="@drawable/ic_baseline_info_24"
+            ></Button>
+        <TextView
+            android:text="Tạo bộ sưu tập địa điểm mới"
+            android:layout_gravity="center"
+            android:layout_columnWeight="7"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"/>
+
+
+    </GridLayout>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Tên"
+        android:layout_margin="20dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Mô tả" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:text="Tạo" />
+
+    <!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:background="#E2EDDE">-->
+
+
+<!--        &lt;!&ndash;        <ImageView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="120dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="120dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:padding="10dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:src="@mipmap/ic_launcher"/>&ndash;&gt;-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="#dc9e1a"-->
+<!--                app:backgroundTint="#46B842"-->
+
+<!--                android:text="Tất cả" />-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="#00c853"-->
+<!--                app:backgroundTint="#46B842"-->
+
+<!--                android:text="Địa điểm" />-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="#1E2273"-->
+<!--                app:backgroundTint="#46B842"-->
+
+<!--                android:text="Hình ảnh" />-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="#dc1a8b"-->
+<!--                app:backgroundTint="#46B842"-->
+<!--                android:text="Bài viết"-->
+<!--                android:textSize="13dp" />-->
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="500dp"-->
+<!--        android:layout_marginTop="0dp"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:textColor="@color/black"-->
+<!--            app:backgroundTint="#FFCC00"-->
+<!--            android:drawableLeft="@drawable/ic_baseline_person_outline_24"-->
+<!--            android:gravity="left"-->
+<!--            android:text="Nhà hàng A"></Button>-->
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:drawableLeft="@drawable/ic_baseline_person_outline_24"-->
+<!--            android:text="Nhà hàng B"-->
+<!--            android:gravity="left"-->
+<!--            android:textColor="@color/black"-->
+<!--            app:backgroundTint="#FFCC00"-->
+<!--            android:background="@color/white"-->
+<!--            android:layout_marginTop="5dp">-->
+<!--        </Button>-->
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:drawableLeft="@drawable/ic_baseline_person_outline_24"-->
+<!--            android:text="Nhà hàng C"-->
+<!--            android:textColor="@color/black"-->
+<!--            app:backgroundTint="#FFCC00"-->
+<!--            android:gravity="left"-->
+<!--            android:background="@color/white"-->
+<!--            android:layout_marginTop="5dp">-->
+<!--        </Button>-->
+<!--        &lt;!&ndash;        <Button&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="50dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:drawableLeft="@drawable/logout"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:text="Đăng xuất"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textColor="@color/black"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:backgroundTint="#FFCC00"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:gravity="left"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:background="@color/white"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_marginTop="5dp">&ndash;&gt;-->
+<!--    </LinearLayout>-->
+
+
+
+</LinearLayout>
