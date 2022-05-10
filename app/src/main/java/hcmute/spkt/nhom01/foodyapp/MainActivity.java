@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     Database database;
     EditText edtusername, edtpassword;
-    Button txtsignup, btnlogin;
+    Button btnsignup, btnlogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         EditText edtusername = (EditText) findViewById(R.id.edtusername);
         EditText edtpassword = (EditText) findViewById(R.id.edtpassword);
-        TextView txtsignup = (TextView) findViewById(R.id.createaccount);
+        Button btnsignup = (Button) findViewById(R.id.createaccount);
         Button btnlogin = (Button) findViewById(R.id.loginbtn);
 
         database = new Database(this, "foody.sqlite", null, 1);
@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         database.QueryData("CREATE TABLE IF NOT EXISTS User(username VARCHAR(200) PRIMARY KEY, password VARCHAR(200), role INTEGER)");
 //        database.QueryData("INSERT INTO User VALUES ('phianh', 'phianh', 1)");
 
-        txtsignup.setOnClickListener(new View.OnClickListener() {
+        btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainLayoutActivity.class);
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(intent);
             }
         });
@@ -53,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     if (password.equals(cursor.getString(1).trim())) {
-                        Toast.makeText(MainActivity.this, "OK", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(MainActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, MainLayoutActivity.class);
+                        startActivity(intent);
                     }
                 }
             }
