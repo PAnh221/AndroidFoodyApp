@@ -1,6 +1,8 @@
 package hcmute.spkt.nhom01.foodyapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,14 +28,16 @@ public class MainActivity extends AppCompatActivity {
 
         EditText edtUsername = (EditText) findViewById(R.id.edtUsername);
         EditText edtPassword = (EditText) findViewById(R.id.edtPassword);
-        TextView btnCreateAccount = (TextView) findViewById(R.id.btnCreateAccount);
+        Button btnCreateAccount = (Button) findViewById(R.id.btnCreateAccount);
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
-        database = new Database(this, "foody.sqlite", null, 1);
-//        database.QueryData("DROP TABLE user");
 
-        database.QueryData("CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(200) NOT NULL, username VARCHAR(200), password VARCHAR(200),address VARCHAR(200), role INTEGER)");
-//        database.QueryData("INSERT INTO user VALUES ('phianh', 'phianh', 'phianh', '1 vo van ngan', 1)");
+        database = new Database(this, "foody.sqlite", null, 1);
+//        database.QueryData("CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(200) NOT NULL, username VARCHAR(200), password VARCHAR(200),address VARCHAR(200), role INTEGER)");
+//        database.QueryData("INSERT INTO user VALUES (null, 'phianh', 'phianh', 'phianh', '1 vo van ngan', 1)");
+
+        //        database.QueryData("INSERT INTO user VALUES ('phianh', 'phianh', 'phianh', '1 vo van ngan', 1)");
+//        database.QueryData("INSERT INTO user VALUES ('nha', 'nha', '1', '1 vo van ngan', 1)");
 
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Cursor cursor = database.GetData("SELECT * FROM user WHERE username = '" + usrname + "'");
                 if (!cursor.moveToFirst()) {
-                    Toast.makeText(MainActivity.this, "Tài khoản không tồn tại", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Tài khoản không tồn tại ", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     if (password.equals(cursor.getString(3).trim())) {

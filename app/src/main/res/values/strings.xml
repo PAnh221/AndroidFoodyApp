@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FoodyApp</string>
+    <string name="favorite_list_fragment">Favorite List</string>
+    <string name="save_list_fragment">Save List</string>
+    <string name="user_info_fragment">User Info</string>
+
 </resources>
