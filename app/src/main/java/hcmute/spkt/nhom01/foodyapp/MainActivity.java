@@ -29,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
         database = new Database(this, "foody.sqlite", null, 1);
+//        database.QueryData("DROP TABLE user");
 
-        database.QueryData("CREATE TABLE IF NOT EXISTS User(username VARCHAR(200) PRIMARY KEY, password VARCHAR(200), role INTEGER)");
-//        database.QueryData("INSERT INTO User VALUES ('phianh', 'phianh', 1)");
+        database.QueryData("CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(200) NOT NULL, username VARCHAR(200), password VARCHAR(200),address VARCHAR(200), role INTEGER)");
+//        database.QueryData("INSERT INTO user VALUES ('phianh', 'phianh', 'phianh', '1 vo van ngan', 1)");
 
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
                 String usrname = edtUsername.getText().toString().trim();
                 String password = edtPassword.getText().toString().trim();
 
-                Cursor cursor = database.GetData("SELECT * FROM User WHERE username = '" + usrname + "'");
+                Cursor cursor = database.GetData("SELECT * FROM user WHERE username = '" + usrname + "'");
                 if (!cursor.moveToFirst()) {
                     Toast.makeText(MainActivity.this, "Tài khoản không tồn tại", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    if (password.equals(cursor.getString(1).trim())) {
+                    if (password.equals(cursor.getString(3).trim())) {
                         Toast.makeText(MainActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this, MainLayoutActivity.class);
                         startActivity(intent);
