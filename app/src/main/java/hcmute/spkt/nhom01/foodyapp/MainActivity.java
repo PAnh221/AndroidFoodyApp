@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         database = new Database(this, "foody.sqlite", null, 1);
 //        database.QueryData("DROP TABLE user");
 
+
+        // tạo DB
         database.QueryData("CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(200) NOT NULL, username VARCHAR(200), password VARCHAR(200),address VARCHAR(200), role INTEGER)");
 //        database.QueryData("INSERT INTO user VALUES ('phianh', 'phianh', 'phianh', '1 vo van ngan', 1)");
 //        database.QueryData("INSERT INTO user VALUES (null, 'thanhnha', 'thanhnha', '1', '1 vo van ngan', 1)");
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("tennguoidung", cursor.getString(1).trim());
+                        editor.putString("tendangnhapnguoidung", cursor.getString(3).trim());
+                        editor.putString("diachinguoidung", cursor.getString(4).trim());
 
                         if(cbRemember.isChecked()) {
 //                            SharedPreferences.Editor editor = sharedPreferences.edit();

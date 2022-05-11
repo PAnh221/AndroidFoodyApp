@@ -55,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
                 else {
                     if (password.equals(password_confirm) && !password.equals("")) {
                         database.QueryData("INSERT INTO user VALUES(" + null + ", '" + name + "','" + username + "', '" + password + "', '" + address + "', 1)");
-                        Toast.makeText(SignUpActivity.this, "Đã đăng kí thành công với username " + username, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUpActivity.this, "Đã đăng kí thành công với username " + username, Toast.LENGTH_LONG).show();
                         finish();
                     }
                     else {

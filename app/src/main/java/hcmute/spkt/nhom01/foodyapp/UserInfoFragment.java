@@ -1,6 +1,8 @@
 package hcmute.spkt.nhom01.foodyapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,17 +37,33 @@ public class UserInfoFragment extends Fragment {
         btnLogout = view.findViewById(R.id.btnDangXuat);
         btnContribution = view.findViewById(R.id.btnGopY);
 
+        SharedPreferences sharedPreferences;
+        sharedPreferences = getActivity().getSharedPreferences("dataLogin", Context.MODE_PRIVATE);
+
+        // Lấy thông tin user hiện tại từ shared
+        String name = sharedPreferences.getString("tennguoidung", "");
+        String username = sharedPreferences.getString("tendangnhapnguoidung", "");
+        String diachi = sharedPreferences.getString("diachinguoidung", "");
+
 //        Tạo user và ánh xạ thông tin lên Fragment
-        ThongTinNguoiDung user = new ThongTinNguoiDung("Mai Thanh Nhã", "maithanhnha12345pyl@gmail.com", "1020 Phạm Văn Đồng, Hiệp Bình Chánh", "0965163425", R.drawable.avatar);
+        ThongTinNguoiDung user = new ThongTinNguoiDung(name, username, diachi, "0965163425", R.drawable.avatar);
         txtTen.setText(user.getTenNguoiDung());
         txtDiaChi.setText(user.getDiaChiNguoiDung());
-        txtSDT.setText(user.getSoDienThoaiNguoiDung());
+        txtSDT.setText(user.getEmailNguoiDung());
         imgUser.setImageResource(user.getImgNguoiDung());
 
-//        Xử lý sự kiện button
+//        Xử lý sự kiện đăng xuất
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // Xóa thông tin người dùng vừa đăng xuất khỏi shared
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove("tennguoidung");
+                editor.remove("tendangnhapnguoidung");
+                editor.remove("diachinguoidung");
+                editor.commit();
+
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
             }
