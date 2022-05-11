@@ -1,24 +1,19 @@
 package hcmute.spkt.nhom01.foodyapp.models;
 
+import java.util.List;
+
 public class DiaDiem {
     private String TenDiaDiem;
     private String DiaChi;
     private int imgDiaDiem;
-    private String TenBoSuuTap;
+    private List<MonAn> dsMonAn;
 
-    public String getDiaChi() {
-        return DiaChi;
-    }
 
-    public DiaDiem(String tenDiaDiem, String diaChi, int imgDiaDiem, String tenBoSuuTap) {
+    public DiaDiem(String tenDiaDiem, String diaChi, int imgDiaDiem, List<MonAn> dsMonAn) {
         TenDiaDiem = tenDiaDiem;
         DiaChi = diaChi;
         this.imgDiaDiem = imgDiaDiem;
-        TenBoSuuTap = tenBoSuuTap;
-    }
-
-    public void setDiaChi(String diaChi) {
-        DiaChi = diaChi;
+        this.dsMonAn = dsMonAn;
     }
 
     public String getTenDiaDiem() {
@@ -29,20 +24,27 @@ public class DiaDiem {
         TenDiaDiem = tenDiaDiem;
     }
 
+    public String getDiaChi() {
+        return DiaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        DiaChi = diaChi;
+    }
+
     public int getImgDiaDiem() {
         return imgDiaDiem;
     }
-
 
     public void setImgDiaDiem(int imgDiaDiem) {
         this.imgDiaDiem = imgDiaDiem;
     }
 
-    public String getTenBoSuuTap() {
-        return TenBoSuuTap;
+    public List<MonAn> getDsMonAn() {
+        return dsMonAn;
     }
 
-    public void setTenBoSuuTap(String tenBoSuuTap) {
-        TenBoSuuTap = tenBoSuuTap;
+    public void setDsMonAn(List<MonAn> dsMonAn) {
+        this.dsMonAn = dsMonAn;
     }
 }

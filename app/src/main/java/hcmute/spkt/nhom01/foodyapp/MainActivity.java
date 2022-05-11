@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         database.QueryData("CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(200) NOT NULL, username VARCHAR(200), password VARCHAR(200),address VARCHAR(200), role INTEGER)");
 //        database.QueryData("INSERT INTO user VALUES ('phianh', 'phianh', 'phianh', '1 vo van ngan', 1)");
+//        database.QueryData("INSERT INTO user VALUES (null, 'thanhnha', 'thanhnha', '1', '1 vo van ngan', 1)");
 
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override

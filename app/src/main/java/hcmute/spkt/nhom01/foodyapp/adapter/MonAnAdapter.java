@@ -1,7 +1,6 @@
 package hcmute.spkt.nhom01.foodyapp.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import hcmute.spkt.nhom01.foodyapp.R;
-import hcmute.spkt.nhom01.foodyapp.models.DiaDiem;
+import hcmute.spkt.nhom01.foodyapp.models.MonAn;
 
-public class DiaDiemAdapter extends ArrayAdapter<DiaDiem> {
+public class MonAnAdapter extends ArrayAdapter<MonAn> {
     Activity context;
     int resource;
-    public DiaDiemAdapter(@NonNull Activity context, int resource) {
+    public MonAnAdapter(@NonNull Activity context, int resource) {
         super(context, resource);
         this.context = context;
         this.resource = resource;
@@ -35,10 +34,11 @@ public class DiaDiemAdapter extends ArrayAdapter<DiaDiem> {
         TextView txtBST = cus.findViewById(R.id.txtBoSuuTap);
         TextView txtDC = cus.findViewById(R.id.txtDiaChi);
 
-        DiaDiem  dc = getItem(position);
-        img.setImageResource(dc.getImgDiaDiem());
-        txtTen.setText(dc.getTenDiaDiem());
-        txtDC.setText(dc.getDiaChi());
+        MonAn monAn = getItem(position);
+        img.setImageResource(monAn.getImgDiaDiem());
+        txtTen.setText(monAn.getTenDiaDiem());
+        txtDC.setText(monAn.getDiaChi());
+        txtBST.setText(monAn.getTenBoSuuTap());
         return cus;
     }
 }

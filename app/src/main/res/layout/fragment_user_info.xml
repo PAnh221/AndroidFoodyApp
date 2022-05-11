@@ -38,18 +38,25 @@
             android:layout_height="120dp"
             android:background="@color/teal_700">
 
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:padding="10dp"
-                android:src="@mipmap/ic_launcher"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_margin="10dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/imgUser"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/avatar"
+                app:civ_border_width="0dp"
+                app:civ_border_color="#FF000000"/>
+
 
             <LinearLayout
+                android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center">
                 <TextView
+                    android:id="@+id/txtTenUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mai Thanh Nhã"
@@ -57,14 +64,21 @@
                     android:textStyle="bold"
                     android:layout_marginTop="8dp"
                     android:textColor="@color/white"/>
-
                 <TextView
+                    android:id="@+id/txtSoDienThoaiUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="1024, Phạm Văn Đồng, Hiệp Bình Chánh, Thủ Đức, TP. Hồ Chí Minh"
+                    android:text="0965163425"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txtDiaChiUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1024 Phạm Văn Đồng, Hiệp Bình Chánh, Thủ Đức, TP. Hồ Chí Minh"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
             </LinearLayout>
 
         </LinearLayout>
@@ -76,6 +90,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btnDoiThongTin"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@color/white"
@@ -85,6 +100,7 @@
                 android:gravity="left"
                 android:text="Đổi thông tin"></Button>
             <Button
+                android:id="@+id/btnMoiBanBe"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:drawableLeft="@drawable/logout"
@@ -96,6 +112,7 @@
                 android:layout_marginTop="5dp">
             </Button>
             <Button
+                android:id="@+id/btnGopY"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:drawableLeft="@drawable/logout"
@@ -107,6 +124,7 @@
                 android:layout_marginTop="5dp">
             </Button>
             <Button
+                android:id="@+id/btnDangXuat"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:drawableLeft="@drawable/logout"

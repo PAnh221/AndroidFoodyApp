@@ -9,13 +9,15 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import hcmute.spkt.nhom01.foodyapp.adapter.DiaDiemAdapter;
+import hcmute.spkt.nhom01.foodyapp.adapter.MonAnAdapter;
 import hcmute.spkt.nhom01.foodyapp.models.DiaDiem;
+import hcmute.spkt.nhom01.foodyapp.models.MonAn;
 
 
 public class SaveListFragment extends Fragment {
 
     ListView lvDiaDiem;
-    DiaDiemAdapter diaDiemAdapter;
+    MonAnAdapter monAnAdapter;
     public SaveListFragment(){
 
     }
@@ -25,19 +27,19 @@ public class SaveListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_save_list, container, false);
         lvDiaDiem = view.findViewById(R.id.lvDanhSachDaLuu);
-        diaDiemAdapter = new DiaDiemAdapter(getActivity(),R.layout.item);
-        lvDiaDiem.setAdapter(diaDiemAdapter);
+        monAnAdapter = new MonAnAdapter(getActivity(),R.layout.item);
+        lvDiaDiem.setAdapter(monAnAdapter);
         AddEvents();
         FakeData();
         return view;
     }
 
     private void FakeData() {
-        diaDiemAdapter.add(new DiaDiem("Chân gà rút xương", "234 Phạm Văn Đồng, Thủ Đức, TP.HCM", R.drawable.thanhmap_changa, "Đã lưu vào BST NhaJun"));
-        diaDiemAdapter.add(new DiaDiem("Cá lóc hấp bầu", "1 Võ Văn Ngân, Thủ Đức, TP.HCM", R.drawable.thanhmap_changa, "Đã lưu vào BST NhaJun"));
-        diaDiemAdapter.add(new DiaDiem("Lươn xào xả ớt", "15 Hàng Xanh, Bình Thạnh, TP.HCM", R.drawable.thanhmap_changa, "Đã lưu vào BST PhiAnh"));
-        diaDiemAdapter.add(new DiaDiem("Đà điểu nướng đá", "234 Phan Văn Trị, Gò Vấp, TP.HCM", R.drawable.thanhmap_changa, "Đã lưu vào BST NhaJun"));
-        diaDiemAdapter.add(new DiaDiem("Cá ngừ mù tạt", "234 Nguyễn Xuyến, Quận 2, TP.HCM", R.drawable.thanhmap_changa, "Đã lưu vào BST PhiAnh"));
+        monAnAdapter.add(new MonAn("Chân gà rút xương", "234 Phạm Văn Đồng, Thủ Đức, TP.HCM", R.drawable.thanhmap_changa, "Đã lưu vào BST NhaJun"));
+        monAnAdapter.add(new MonAn("Cá lóc hấp bầu", "1 Võ Văn Ngân, Thủ Đức, TP.HCM", R.drawable.caloc, "Đã lưu vào BST NhaJun"));
+        monAnAdapter.add(new MonAn("Lươn xào sả ớt", "15 Hàng Xanh, Bình Thạnh, TP.HCM", R.drawable.luonxao, "Đã lưu vào BST PhiAnh"));
+        monAnAdapter.add(new MonAn("Đà điểu nướng đá", "234 Phan Văn Trị, Gò Vấp, TP.HCM", R.drawable.dadieu, "Đã lưu vào BST NhaJun"));
+        monAnAdapter.add(new MonAn("Cá ngừ mù tạt", "234 Nguyễn Xuyến, Quận 2, TP.HCM", R.drawable.cangu, "Đã lưu vào BST PhiAnh"));
 
     }
     private void AddEvents() {
