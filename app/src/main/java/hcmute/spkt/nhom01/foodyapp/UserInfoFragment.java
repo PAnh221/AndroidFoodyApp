@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 
 
 public class UserInfoFragment extends Fragment {
-
     public UserInfoFragment(){
 
     }
