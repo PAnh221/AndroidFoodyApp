@@ -42,11 +42,11 @@ public class UserInfoFragment extends Fragment {
 
         // Lấy thông tin user hiện tại từ shared
         String name = sharedPreferences.getString("tennguoidung", "");
-        String username = sharedPreferences.getString("tendangnhapnguoidung", "");
+        String email = sharedPreferences.getString("emailnguoidung", "");
         String diachi = sharedPreferences.getString("diachinguoidung", "");
 
 //        Tạo user và ánh xạ thông tin lên Fragment
-        ThongTinNguoiDung user = new ThongTinNguoiDung(name, username, diachi, "0965163425", R.drawable.avatar);
+        ThongTinNguoiDung user = new ThongTinNguoiDung(name, email, diachi, "0965163425", R.drawable.avatar);
         txtTen.setText(user.getTenNguoiDung());
         txtDiaChi.setText(user.getDiaChiNguoiDung());
         txtSDT.setText(user.getEmailNguoiDung());
@@ -60,7 +60,7 @@ public class UserInfoFragment extends Fragment {
                 // Xóa thông tin người dùng vừa đăng xuất khỏi shared
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.remove("tennguoidung");
-                editor.remove("tendangnhapnguoidung");
+                editor.remove("emailnguoidung");
                 editor.remove("diachinguoidung");
                 editor.commit();
 

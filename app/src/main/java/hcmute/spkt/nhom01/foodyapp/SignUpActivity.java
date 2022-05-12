@@ -13,7 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SignUpActivity extends AppCompatActivity {
     Database database;
     Button btnBackToLogin, btnSignUp;
-    EditText edtUsernameSignUp, edtPasswordSignUp, edtConfirmPassword, edtnameSignUp, edtaddressSignUp;
+    EditText edtUsernameSignUp,
+            edtPasswordSignUp,
+            edtConfirmPassword,
+            edtnameSignUp,
+            edtaddressSignUp,
+            edtemailSignUp,
+            edtPhoneSignUp;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +32,10 @@ public class SignUpActivity extends AppCompatActivity {
         edtConfirmPassword = (EditText) findViewById(R.id.edtConfirmPassword);
         edtnameSignUp = (EditText) findViewById(R.id.edtnameSignUp);
         edtaddressSignUp = (EditText) findViewById(R.id.edtaddressSignUp);
+        edtemailSignUp = (EditText) findViewById(R.id.edtemailSignUp);
+        edtPhoneSignUp = (EditText) findViewById(R.id.edtphoneSignUp);
 
-        database = new Database(this, "foody.sqlite", null, 1);
+        database = new Database(this, "foodyapp.sqlite", null, 1);
 
         btnBackToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,16 +53,19 @@ public class SignUpActivity extends AppCompatActivity {
                 String password_confirm = edtConfirmPassword.getText().toString().trim();
                 String name = edtnameSignUp.getText().toString().trim();
                 String address = edtaddressSignUp.getText().toString().trim();
+                String email = edtemailSignUp.getText().toString().trim();
+                String phone = edtPhoneSignUp.getText().toString().trim();
+                String role = "user";
 
                 if (username.equals("")) return;
-                Cursor cursor = database.GetData("SELECT * FROM user WHERE username = '" + username + "'");
+                Cursor cursor = database.GetData("SELECT * FROM Account WHERE Username = '" + username + "'");
                 if (((cursor != null) && (cursor.getCount() > 0))) {
                     Toast.makeText(SignUpActivity.this, "Tài khoản đã tồn tại", Toast.LENGTH_SHORT).show();
                     edtUsernameSignUp.setText("");
                 }
                 else {
                     if (password.equals(password_confirm) && !password.equals("")) {
-                        database.QueryData("INSERT INTO user VALUES(" + null + ", '" + name + "','" + username + "', '" + password + "', '" + address + "', 1)");
+                        database.QueryData("INSERT INTO Account VALUES('" + username + "', '" + password + "', '" + name + "', '" + phone + "','"+ email +"', '"+ address +"', '"+ role +"')");
                         Toast.makeText(SignUpActivity.this, "Đã đăng kí thành công với username " + username, Toast.LENGTH_LONG).show();
                         finish();
                     }

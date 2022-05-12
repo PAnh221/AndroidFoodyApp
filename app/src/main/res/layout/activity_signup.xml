@@ -7,28 +7,33 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/signin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:text="ĐĂNG KÝ"
-        android:textColor="@color/white"
-        android:textSize="35dp"
-        android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:id="@+id/signin"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="ĐĂNG KÝ"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="35dp"-->
+<!--        android:textStyle="bold" />-->
 
     <EditText
         android:id="@+id/edtnameSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/signin"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#30ffffff"
         android:drawableLeft="@drawable/ic_baseline_person_outline_24"
         android:drawablePadding="20dp"
         android:hint="Họ tên"
-        android:padding="20dp"
+        android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
@@ -42,7 +47,35 @@
         android:drawableLeft="@drawable/ic_baseline_person_outline_24"
         android:drawablePadding="20dp"
         android:hint="Địa chỉ"
-        android:padding="20dp"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/edtemailSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtaddressSignUp"
+        android:layout_margin="10dp"
+        android:background="#30ffffff"
+        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:drawablePadding="20dp"
+        android:hint="Email"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/edtphoneSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtemailSignUp"
+        android:layout_margin="10dp"
+        android:background="#30ffffff"
+        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:drawablePadding="20dp"
+        android:hint="Số điện thoại"
+        android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
@@ -51,7 +84,7 @@
         android:id="@+id/edtUsernameSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edtaddressSignUp"
+        android:layout_below="@id/edtphoneSignUp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -60,7 +93,7 @@
         android:drawableLeft="@drawable/ic_baseline_person_outline_24"
         android:drawablePadding="20dp"
         android:hint="Tên tài khoản"
-        android:padding="20dp"
+        android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
@@ -78,7 +111,7 @@
         android:drawablePadding="20dp"
         android:hint="Mật khẩu"
         android:inputType="textPassword"
-        android:padding="20dp"
+        android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
@@ -96,7 +129,7 @@
         android:drawablePadding="20dp"
         android:hint="Xác nhận mật khẩu"
         android:inputType="textPassword"
-        android:padding="20dp"
+        android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
@@ -112,6 +145,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/design_default_color_secondary"
+        android:padding="15dp"
         android:text="ĐĂNG KÝ" />
 
     <Button
