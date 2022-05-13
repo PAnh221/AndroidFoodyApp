@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imgMon"
+        android:layout_width="match_parent"
+        android:layout_height="257dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/huongbien" />
+
+    <TextView
+        android:id="@+id/txtTenMon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhà hàng Hương Biển"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:gravity="center"
+        android:textColor="@color/teal_700"/>
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/txtMoTaMonAn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hân hạnh phục vụ quý khách!"
+        android:textSize="20sp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txtDiaChi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ:"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txtDiaChiAnhXa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="102 Phạm Văn Đồng, Hiệp Bình Chánh, Thủ Đức, TP. Hồ Chí Minh"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txtGioMoCua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mở cửa:"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txtGioMoCuaAnhXa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7:00 - 22:00 hàng ngày."
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txtDanhGia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đánh giá:"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txtDanhGiaAnhXa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4.5 sao (20 lượt đánh giá)."
+            android:textSize="20sp" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/txtThucDon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thực đơn cửa hàng"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/teal_700"/>
+    <ListView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </ListView>
+</LinearLayout>
