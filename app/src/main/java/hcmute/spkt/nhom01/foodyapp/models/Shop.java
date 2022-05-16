@@ -3,6 +3,15 @@ package hcmute.spkt.nhom01.foodyapp.models;
 public class Shop {
     int ShopID;
     String Name, Address, Phone;
+    byte[] Image;
+
+    public byte[] getImage() {
+        return Image;
+    }
+
+    public void setImage(byte[] image) {
+        Image = image;
+    }
 
     public int getShopID() {
         return ShopID;

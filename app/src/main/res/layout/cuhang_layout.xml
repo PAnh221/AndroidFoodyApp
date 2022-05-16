@@ -84,7 +84,7 @@
             android:id="@+id/txtDanhGia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Đánh giá:"
+            android:text="Số điện thoại:"
             android:textSize="20sp"
             android:textStyle="bold"/>
         <TextView

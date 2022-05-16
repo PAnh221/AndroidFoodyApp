@@ -1,48 +1,89 @@
 package hcmute.spkt.nhom01.foodyapp.models;
 
 public class MonAn {
-    private String TenMon;
-    private String DiaChi;
-    private int imgMonAn;
-    private String TenBoSuuTap;
+//    private String TenMon;
+//    private String DiaChi;
+//    private int imgMonAn;
+//    private String TenBoSuuTap;
 
-    public String getDiaChi() {
-        return DiaChi;
+    int ProID;
+    String Name, Description, Category, ShopName;
+    Float Price;
+    int Quantity;
+    byte[] Image;
+
+    public MonAn(int proID, String name, String description, String category, String shopName, Float price, int quantity, byte[] image) {
+        ProID = proID;
+        Name = name;
+        Description = description;
+        Category = category;
+        ShopName = shopName;
+        Price = price;
+        Quantity = quantity;
+        Image = image;
     }
 
-    public MonAn(String tenDiaDiem, String diaChi, int imgDiaDiem, String tenBoSuuTap) {
-        TenMon = tenDiaDiem;
-        DiaChi = diaChi;
-        this.imgMonAn = imgDiaDiem;
-        TenBoSuuTap = tenBoSuuTap;
+    public int getProID() {
+        return ProID;
     }
 
-    public void setDiaChi(String diaChi) {
-        DiaChi = diaChi;
+    public void setProID(int proID) {
+        ProID = proID;
     }
 
-    public String getTenDiaDiem() {
-        return TenMon;
+    public String getName() {
+        return Name;
     }
 
-    public void setTenDiaDiem(String tenDiaDiem) {
-        TenMon = tenDiaDiem;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public int getImgDiaDiem() {
-        return imgMonAn;
+    public String getDescription() {
+        return Description;
     }
 
-
-    public void setImgDiaDiem(int imgDiaDiem) {
-        this.imgMonAn = imgDiaDiem;
+    public void setDescription(String description) {
+        Description = description;
     }
 
-    public String getTenBoSuuTap() {
-        return TenBoSuuTap;
+    public String getCategory() {
+        return Category;
     }
 
-    public void setTenBoSuuTap(String tenBoSuuTap) {
-        TenBoSuuTap = tenBoSuuTap;
+    public void setCategory(String category) {
+        Category = category;
+    }
+
+    public String getShopName() {
+        return ShopName;
+    }
+
+    public void setShopName(String shopName) {
+        ShopName = shopName;
+    }
+
+    public Float getPrice() {
+        return Price;
+    }
+
+    public void setPrice(Float price) {
+        Price = price;
+    }
+
+    public int getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        Quantity = quantity;
+    }
+
+    public byte[] getImage() {
+        return Image;
+    }
+
+    public void setImage(byte[] image) {
+        Image = image;
     }
 }

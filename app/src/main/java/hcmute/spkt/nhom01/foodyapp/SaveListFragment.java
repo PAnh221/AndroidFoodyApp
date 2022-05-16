@@ -30,18 +30,17 @@ public class SaveListFragment extends Fragment {
         monAnAdapter = new MonAnAdapter(getActivity(),R.layout.item);
         lvDiaDiem.setAdapter(monAnAdapter);
         AddEvents();
-        FakeData();
+//        FakeData();
         return view;
     }
 
-    private void FakeData() {
-        monAnAdapter.add(new MonAn("Chân gà rút xương", "234 Phạm Văn Đồng, Thủ Đức, TP.HCM", R.drawable.thanhmap_changa, "Đã lưu vào BST NhaJun"));
-        monAnAdapter.add(new MonAn("Cá lóc hấp bầu", "1 Võ Văn Ngân, Thủ Đức, TP.HCM", R.drawable.caloc, "Đã lưu vào BST NhaJun"));
-        monAnAdapter.add(new MonAn("Lươn xào sả ớt", "15 Hàng Xanh, Bình Thạnh, TP.HCM", R.drawable.luonxao, "Đã lưu vào BST PhiAnh"));
-        monAnAdapter.add(new MonAn("Đà điểu nướng đá", "234 Phan Văn Trị, Gò Vấp, TP.HCM", R.drawable.dadieu, "Đã lưu vào BST NhaJun"));
-        monAnAdapter.add(new MonAn("Cá ngừ mù tạt", "234 Nguyễn Xuyến, Quận 2, TP.HCM", R.drawable.cangu, "Đã lưu vào BST PhiAnh"));
-
-    }
+//    private void FakeData() {
+//        monAnAdapter.add(new MonAn("Chân gà rút xương", "234 Phạm Văn Đồng, Thủ Đức, TP.HCM", R.drawable.thanhmap_changa, "Đã lưu vào BST NhaJun"));
+//        monAnAdapter.add(new MonAn("Cá lóc hấp bầu", "1 Võ Văn Ngân, Thủ Đức, TP.HCM", R.drawable.caloc, "Đã lưu vào BST NhaJun"));
+//        monAnAdapter.add(new MonAn("Lươn xào sả ớt", "15 Hàng Xanh, Bình Thạnh, TP.HCM", R.drawable.luonxao, "Đã lưu vào BST PhiAnh"));
+//        monAnAdapter.add(new MonAn("Đà điểu nướng đá", "234 Phan Văn Trị, Gò Vấp, TP.HCM", R.drawable.dadieu, "Đã lưu vào BST NhaJun"));
+//        monAnAdapter.add(new MonAn("Cá ngừ mù tạt", "234 Nguyễn Xuyến, Quận 2, TP.HCM", R.drawable.cangu, "Đã lưu vào BST PhiAnh"));
+//    }
     private void AddEvents() {
     }
 

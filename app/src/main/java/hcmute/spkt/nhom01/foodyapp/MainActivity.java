@@ -35,26 +35,9 @@ public class MainActivity extends AppCompatActivity {
         edtPassword.setText(sharedPreferences.getString("matkhau", ""));
         cbRemember.setChecked(sharedPreferences.getBoolean("checked", false));
 
-        database = new Database(this, "foodyapp.sqlite", null, 1);
-//        database.QueryData("DROP TABLE user");
+        createData();
 
 
-
-        // tạo DB
-        database.QueryData("CREATE TABLE IF NOT EXISTS Account(Username VARCHAR(200) PRIMARY KEY, Password VARCHAR(200) NOT NULL, Name VARCHAR(200) NOT NULL, Phone VARCHAR(12), Email VARCHAR(200) NOT NULL,Address NVARCHAR(200), Role VARCHAR(30) NOT NULL)");
-//        database.QueryData("CREATE TABLE IF NOT EXISTS Cart(Id INTEGER PRIMARY KEY AUTOINCREMENT,UserName NVARCHAR(200) NOT NULL REFERENCES Account(Username), ProductId INTEGER NOT NULL REFERENCES Product(Id), Quantity INTEGER NOT NULL DEFAULT 1)");
-        database.QueryData("CREATE TABLE IF NOT EXISTS FavoriteLocation(Id INTEGER PRIMARY KEY AUTOINCREMENT,UserName NVARCHAR(200) NOT NULL REFERENCES Account(Username), ShopName NVARCHAR(200) NOT NULL REFERENCES Shop(Name))");
-        database.QueryData("CREATE TABLE IF NOT EXISTS FavoriteFood(Id INTEGER PRIMARY KEY AUTOINCREMENT,UserName NVARCHAR(200) NOT NULL REFERENCES Account(Username), ProductID INTEGER NOT NULL REFERENCES Product(Id))");
-//        database.QueryData("CREATE TABLE IF NOT EXISTS OrderDetail(Id INTEGER PRIMARY KEY AUTOINCREMENT,ProductId INTEGER NOT NULL REFERENCES Product(Id), OrderId INTEGER NOT NULL REFERENCES Orders(Id),Quantity INTEGER NOT NULL, UnitPrice FLOAT)");
-//        database.QueryData("CREATE TABLE IF NOT EXISTS Orders(Id INTEGER PRIMARY KEY AUTOINCREMENT,UserName NVARCHAR(200) NOT NULL REFERENCES Account(Username), OrderPrice FLOAT,DeliveryPrice FLOAT, TotalPrice FLOAT)");
-        database.QueryData("CREATE TABLE IF NOT EXISTS Product(ProID INTEGER PRIMARY KEY AUTOINCREMENT,Name NVARCHAR(200) NOT NULL ,Description NVARCHAR(200), Price FLOAT NOT NULL, Quantity INTEGER NOT NULL, Category VARCHAR(20), ShopName NVARCHAR(200) REFERENCES Shop(Name))");
-        database.QueryData("CREATE TABLE IF NOT EXISTS Shop(ShopID INTEGER PRIMARY KEY AUTOINCREMENT, Name NVARCHAR(200), Address NVARCHAR(200), Phone VARCHAR(12))");
-
-
-//        database.QueryData("INSERT INTO Account VALUES ('phianh', 'phianh', 'Pham Phi Anh', '0909090909', 'pa12asd3@gmail.com', '1 VVN', 'user')");
-//        database.QueryData("CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(200) NOT NULL, username VARCHAR(200), password VARCHAR(200),address VARCHAR(200), role INTEGER)");
-//        database.QueryData("INSERT INTO user VALUES ('phianh', 'phianh', 'phianh', '1 vo van ngan', 1)");
-//        database.QueryData("INSERT INTO user VALUES (null, 'thanhnha', 'thanhnha', '1', '1 vo van ngan', 1)");
 
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +91,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void createData() {
+        database = new Database(this, "foodyappnhom1.sqlite", null, 1);
+
+//        database.QueryData("DROP TABLE Shop");
+//         tạo DB
+        database.QueryData("CREATE TABLE IF NOT EXISTS Account(Username VARCHAR(200) PRIMARY KEY, Password VARCHAR(200) NOT NULL, Name VARCHAR(200) NOT NULL, Phone VARCHAR(12), Email VARCHAR(200) NOT NULL,Address NVARCHAR(200), Role VARCHAR(30) NOT NULL)");
+        database.QueryData("CREATE TABLE IF NOT EXISTS Cart(Id INTEGER PRIMARY KEY AUTOINCREMENT,UserName NVARCHAR(200) NOT NULL REFERENCES Account(Username), ProductId INTEGER NOT NULL REFERENCES Product(Id), Quantity INTEGER NOT NULL DEFAULT 1)");
+        database.QueryData("CREATE TABLE IF NOT EXISTS FavoriteLocation(Id INTEGER PRIMARY KEY AUTOINCREMENT,UserName NVARCHAR(200) NOT NULL REFERENCES Account(Username), ShopName NVARCHAR(200) NOT NULL REFERENCES Shop(Name))");
+        database.QueryData("CREATE TABLE IF NOT EXISTS FavoriteFood(Id INTEGER PRIMARY KEY AUTOINCREMENT,UserName NVARCHAR(200) NOT NULL REFERENCES Account(Username), ProductID INTEGER NOT NULL REFERENCES Product(Id))");
+        database.QueryData("CREATE TABLE IF NOT EXISTS OrderDetail(Id INTEGER PRIMARY KEY AUTOINCREMENT,ProductId INTEGER NOT NULL REFERENCES Product(Id), OrderId INTEGER NOT NULL REFERENCES Orders(Id),Quantity INTEGER NOT NULL, UnitPrice FLOAT)");
+        database.QueryData("CREATE TABLE IF NOT EXISTS Orders(Id INTEGER PRIMARY KEY AUTOINCREMENT,UserName NVARCHAR(200) NOT NULL REFERENCES Account(Username), OrderPrice FLOAT,DeliveryPrice FLOAT, TotalPrice FLOAT)");
+        database.QueryData("CREATE TABLE IF NOT EXISTS Product(ProID INTEGER PRIMARY KEY AUTOINCREMENT,Name NVARCHAR(200) NOT NULL ,Description NVARCHAR(200), Price FLOAT NOT NULL, Quantity INTEGER NOT NULL, Category VARCHAR(20), ShopID NVARCHAR(200) REFERENCES Shop(ShopID))");
+        database.QueryData("CREATE TABLE IF NOT EXISTS Shop(ShopID INTEGER PRIMARY KEY AUTOINCREMENT, Name NVARCHAR(200), Address NVARCHAR(200), Phone VARCHAR(12))");
+//
+        database.QueryData("INSERT INTO Shop VALUES (null, 'Mi cay Sasin', '123/33 Phạm Văn Đồng', '0909887763')");
+        database.QueryData("INSERT INTO Shop VALUES (null, 'NHÀ HÀNG TÂY ĐÔ', '05 Lý Thái Tổ, Hưng Phú, Cái Răng, Cần Thơ', '09098863')");
+//        database.QueryData("INSERT INTO Shop VALUES (null, 'Nhà Hàng Hữu Nghị', '68 đường Trưng Nhị, Trà Ôn, Vĩnh Long', '0909887763')");
+//        database.QueryData("INSERT INTO Shop VALUES (null, 'Nhà Hàng Ngói đỏ', '596 30 thang 4 Str, Cần Thơ', '090983763')");
+
+//        database.QueryData("CREATE TABLE IF NOT EXISTS Shop(ShopID INTEGER PRIMARY KEY AUTOINCREMENT, Name NVARCHAR(200), Address NVARCHAR(200), Phone VARCHAR(12))");
+//        database.QueryData("CREATE TABLE IF NOT EXISTS Shop(ShopID INTEGER PRIMARY KEY AUTOINCREMENT, Name NVARCHAR(200), Address NVARCHAR(200), Phone VARCHAR(12))");
+//        database.QueryData("CREATE TABLE IF NOT EXISTS Shop(ShopID INTEGER PRIMARY KEY AUTOINCREMENT, Name NVARCHAR(200), Address NVARCHAR(200), Phone VARCHAR(12))");
+//        database.QueryData("CREATE TABLE IF NOT EXISTS Shop(ShopID INTEGER PRIMARY KEY AUTOINCREMENT, Name NVARCHAR(200), Address NVARCHAR(200), Phone VARCHAR(12))");
+
+//        database.QueryData("INSERT INTO Account VALUES ('phianh', 'phianh', 'Pham Phi Anh', '0909090909', 'pa12asd3@gmail.com', '1 VVN', 'user')");
+//        database.QueryData("CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(200) NOT NULL, username VARCHAR(200), password VARCHAR(200),address VARCHAR(200), role INTEGER)");
+//        database.QueryData("INSERT INTO user VALUES ('phianh', 'phianh', 'phianh', '1 vo van ngan', 1)");
+//        database.QueryData("INSERT INTO user VALUES (null, 'thanhnha', 'thanhnha', '1', '1 vo van ngan', 1)");
+    }
+
     private void AnhXa() {
         edtUsername = (EditText) findViewById(R.id.edtUsername);
         edtPassword = (EditText) findViewById(R.id.edtPassword);

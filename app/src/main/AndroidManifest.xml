@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodyApp">
         <activity
-            android:name="hcmute.spkt.nhom01.foodyapp.MainActivity"
+            android:name=".ShopActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,9 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="hcmute.spkt.nhom01.foodyapp.MainLayoutActivity"
+            android:name=".MainLayoutActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,9 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="hcmute.spkt.nhom01.foodyapp.SignUpActivity"
+            android:name=".SignUpActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

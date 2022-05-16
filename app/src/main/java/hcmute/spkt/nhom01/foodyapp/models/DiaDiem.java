@@ -3,48 +3,62 @@ package hcmute.spkt.nhom01.foodyapp.models;
 import java.util.List;
 
 public class DiaDiem {
-    private String TenDiaDiem;
-    private String DiaChi;
-    private int imgDiaDiem;
-    private List<MonAn> dsMonAn;
+//    private String TenDiaDiem;
+//    private String DiaChi;
+//    private int imgDiaDiem;
+//
+//    private List<MonAn> dsMonAn;
+
+    int ShopID;
+    String Name, Address, Phone;
+    byte[] Image;
 
 
-    public DiaDiem(String tenDiaDiem, String diaChi, int imgDiaDiem, List<MonAn> dsMonAn) {
-        TenDiaDiem = tenDiaDiem;
-        DiaChi = diaChi;
-        this.imgDiaDiem = imgDiaDiem;
-        this.dsMonAn = dsMonAn;
+    public DiaDiem(int shopID, String name, String address, String phone, byte[] image) {
+        ShopID = shopID;
+        Name = name;
+        Address = address;
+        Phone = phone;
+        Image = image;
     }
 
-    public String getTenDiaDiem() {
-        return TenDiaDiem;
+    public int getShopID() {
+        return ShopID;
     }
 
-    public void setTenDiaDiem(String tenDiaDiem) {
-        TenDiaDiem = tenDiaDiem;
+    public void setShopID(int shopID) {
+        ShopID = shopID;
     }
 
-    public String getDiaChi() {
-        return DiaChi;
+    public String getName() {
+        return Name;
     }
 
-    public void setDiaChi(String diaChi) {
-        DiaChi = diaChi;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public int getImgDiaDiem() {
-        return imgDiaDiem;
+    public String getAddress() {
+        return Address;
     }
 
-    public void setImgDiaDiem(int imgDiaDiem) {
-        this.imgDiaDiem = imgDiaDiem;
+    public void setAddress(String address) {
+        Address = address;
     }
 
-    public List<MonAn> getDsMonAn() {
-        return dsMonAn;
+    public String getPhone() {
+        return Phone;
     }
 
-    public void setDsMonAn(List<MonAn> dsMonAn) {
-        this.dsMonAn = dsMonAn;
+    public void setPhone(String phone) {
+        Phone = phone;
+    }
+
+    public byte[] getImage() {
+        return Image;
+    }
+
+    public void setImage(byte[] image) {
+        Image = image;
     }
 }

@@ -5,6 +5,15 @@ public class Product {
     String Name, Description, Category, ShopName;
     Float Price;
     int Quantity;
+    byte[] Image;
+
+    public byte[] getImage() {
+        return Image;
+    }
+
+    public void setImage(byte[] image) {
+        Image = image;
+    }
 
     public int getProID() {
         return ProID;

@@ -35,10 +35,11 @@ public class DiaDiemAdapter extends ArrayAdapter<DiaDiem> {
         TextView txtBST = cus.findViewById(R.id.txtBoSuuTap);
         TextView txtDC = cus.findViewById(R.id.txtDiaChi);
 
-        DiaDiem  dc = getItem(position);
-        img.setImageResource(dc.getImgDiaDiem());
-        txtTen.setText(dc.getTenDiaDiem());
-        txtDC.setText(dc.getDiaChi());
+        DiaDiem dc = getItem(position);
+        img.setImageResource(R.drawable.huongbien);
+        txtTen.setText(dc.getName());
+        txtDC.setText(dc.getAddress());
+
         return cus;
     }
 }

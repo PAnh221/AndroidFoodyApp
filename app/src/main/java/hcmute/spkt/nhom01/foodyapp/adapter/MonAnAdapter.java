@@ -35,10 +35,10 @@ public class MonAnAdapter extends ArrayAdapter<MonAn> {
         TextView txtDC = cus.findViewById(R.id.txtDiaChi);
 
         MonAn monAn = getItem(position);
-        img.setImageResource(monAn.getImgDiaDiem());
-        txtTen.setText(monAn.getTenDiaDiem());
-        txtDC.setText(monAn.getDiaChi());
-        txtBST.setText(monAn.getTenBoSuuTap());
+        img.setImageResource(R.drawable.caloc);
+        txtTen.setText(monAn.getName());
+        txtDC.setText(monAn.getShopName());
+        txtBST.setText(monAn.getPrice().toString());
         return cus;
     }
 }
