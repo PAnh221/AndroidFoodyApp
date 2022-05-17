@@ -1,6 +1,7 @@
 package hcmute.spkt.nhom01.foodyapp.adapter;
 
 import android.app.Activity;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,9 @@ public class MonAnAdapter extends ArrayAdapter<MonAn> {
 
 
         MonAn monAn = getItem(position);
-        imgMon.setImageResource(R.drawable.caloc);
+//        imgMon.setImageResource(R.drawable.caloc);
+        imgMon.setImageBitmap(BitmapFactory.decodeByteArray(monAn.getImage(), 0, monAn.getImage().length));
+
         txtTen.setText(monAn.getName());
         txtGia.setText(monAn.getPrice().toString());
 

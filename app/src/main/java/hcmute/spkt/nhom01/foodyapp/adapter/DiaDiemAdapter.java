@@ -2,6 +2,7 @@ package hcmute.spkt.nhom01.foodyapp.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,8 @@ public class DiaDiemAdapter extends ArrayAdapter<DiaDiem> {
         TextView txtDC = cus.findViewById(R.id.txtDiaChi);
 
         DiaDiem dc = getItem(position);
-        img.setImageResource(R.drawable.huongbien);
+//        img.setImageResource(R.drawable.huongbien);
+        img.setImageBitmap(BitmapFactory.decodeByteArray(dc.getImage(), 0, dc.getImage().length));
         txtTen.setText(dc.getName());
         txtDC.setText(dc.getAddress());
 

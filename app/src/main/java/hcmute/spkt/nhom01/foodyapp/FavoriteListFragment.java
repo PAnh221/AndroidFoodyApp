@@ -52,7 +52,8 @@ public class FavoriteListFragment extends Fragment {
             String ten = dataShop.getString(1).trim();
             String diachi = dataShop.getString(2).trim();
             String sdt = dataShop.getString(3).trim();
-            diaDiemAdapter.add(new DiaDiem(id, ten, diachi, sdt, null));
+            byte[] image = dataShop.getBlob(4);
+            diaDiemAdapter.add(new DiaDiem(id, ten, diachi, sdt, image));
         }
         dataShop.close();
         diaDiemAdapter.notifyDataSetChanged();
@@ -70,7 +71,7 @@ public class FavoriteListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 DiaDiem diadiem = diaDiemAdapter.getItem(i);
-                Toast.makeText(getActivity(),"Bạn đã chọn "+ diadiem.getName(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(),"Bạn đã chọn "+ diadiem.getName(),Toast.LENGTH_SHORT).show();
 
                 // Lấy dữ liệu từ db
                 Database database = new Database(getActivity(), "foodyappnhom1.sqlite", null, 1);
@@ -81,9 +82,8 @@ public class FavoriteListFragment extends Fragment {
                     String shopAddress = dataShop.getString(2).trim();
                     String shopPhone = dataShop.getString(3).trim();
                 }
-
-
                 dataShop.close();
+
                 Intent intent = new Intent(getActivity(), ShopActivity.class);
                 intent.putExtra("tencuahang", diadiem.getName());
                 intent.putExtra("diachicuahang", diadiem.getAddress());

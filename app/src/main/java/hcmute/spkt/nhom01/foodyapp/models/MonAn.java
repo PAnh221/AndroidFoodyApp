@@ -7,20 +7,22 @@ public class MonAn {
 //    private String TenBoSuuTap;
 
     int ProID;
-    String Name, Description, Category, ShopName;
+    String Name, Description;
     Float Price;
     int Quantity;
+    String Category;
     byte[] Image;
+    int ShopID;
 
-    public MonAn(int proID, String name, String description, String category, String shopName, Float price, int quantity, byte[] image) {
+    public MonAn(int proID, String name, String description, Float price, int quantity, String category, byte[] image, int shopID) {
         ProID = proID;
         Name = name;
         Description = description;
-        Category = category;
-        ShopName = shopName;
         Price = price;
         Quantity = quantity;
+        Category = category;
         Image = image;
+        ShopID = shopID;
     }
 
     public int getProID() {
@@ -47,22 +49,6 @@ public class MonAn {
         Description = description;
     }
 
-    public String getCategory() {
-        return Category;
-    }
-
-    public void setCategory(String category) {
-        Category = category;
-    }
-
-    public String getShopName() {
-        return ShopName;
-    }
-
-    public void setShopName(String shopName) {
-        ShopName = shopName;
-    }
-
     public Float getPrice() {
         return Price;
     }
@@ -77,6 +63,22 @@ public class MonAn {
 
     public void setQuantity(int quantity) {
         Quantity = quantity;
+    }
+
+    public String getCategory() {
+        return Category;
+    }
+
+    public void setCategory(String category) {
+        Category = category;
+    }
+
+    public int getShopID() {
+        return ShopID;
+    }
+
+    public void setShopID(int shopID) {
+        ShopID = shopID;
     }
 
     public byte[] getImage() {
