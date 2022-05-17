@@ -16,10 +16,10 @@ import androidx.annotation.Nullable;
 import hcmute.spkt.nhom01.foodyapp.R;
 import hcmute.spkt.nhom01.foodyapp.models.MonAn;
 
-public class MonAnAdapter extends ArrayAdapter<MonAn> {
+public class ChiTietMonAnAdapter extends ArrayAdapter<MonAn> {
     Activity context;
     int resource;
-    public MonAnAdapter(@NonNull Activity context, int resource) {
+    public ChiTietMonAnAdapter(@NonNull Activity context, int resource) {
         super(context, resource);
         this.context = context;
         this.resource = resource;
@@ -33,12 +33,18 @@ public class MonAnAdapter extends ArrayAdapter<MonAn> {
 
         ImageView imgMon = cus.findViewById(R.id.imgMon);
         TextView txtTen = cus.findViewById(R.id.txtTenMon);
+        TextView txtMoTaMonAn = cus.findViewById(R.id.txtMoTaMonAn);
         TextView txtGia = cus.findViewById(R.id.txtGia);
-
+        EditText edtLoiNhan = cus.findViewById(R.id.edtLoiNhanChoCuaHang);
+        Button btnTang = cus.findViewById(R.id.btnTangSoLuong);
+        TextView txtSoLuong = cus.findViewById(R.id.txtSoLuong);
+        Button btnGiam = cus.findViewById(R.id.btnGiamSoLuong);
+        Button btnDatHang = cus.findViewById(R.id.btnDatHang);
 
         MonAn monAn = getItem(position);
         imgMon.setImageResource(R.drawable.caloc);
         txtTen.setText(monAn.getName());
+        txtMoTaMonAn.setText(monAn.getDescription());
         txtGia.setText(monAn.getPrice().toString());
 
         return cus;

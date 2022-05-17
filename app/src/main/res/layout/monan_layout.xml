@@ -63,7 +63,7 @@
 
         <TextView
             android:layout_marginLeft="10dp"
-            android:id="@+id/textView2"
+            android:id="@+id/txtSoLuong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1"
@@ -81,7 +81,7 @@
 
         <Button
             android:layout_marginLeft="20dp"
-            android:id="@+id/button5"
+            android:id="@+id/btnDatHang"
             android:layout_width="200dp"
             android:layout_height="60dp"
             android:backgroundTint="@color/teal_700"

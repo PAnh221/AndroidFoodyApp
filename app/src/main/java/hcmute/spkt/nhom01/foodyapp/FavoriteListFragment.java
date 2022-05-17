@@ -37,9 +37,9 @@ public class FavoriteListFragment extends Fragment {
         diaDiemAdapter = new DiaDiemAdapter(getActivity(),R.layout.item);
         lvDiaDiem.setAdapter(diaDiemAdapter);
 
-        AddEvents();
 //        FakeData();
         getShopData();
+        AddEvents();
         return view;
     }
 
@@ -88,6 +88,7 @@ public class FavoriteListFragment extends Fragment {
                 intent.putExtra("tencuahang", diadiem.getName());
                 intent.putExtra("diachicuahang", diadiem.getAddress());
                 intent.putExtra("sdtcuahang", diadiem.getPhone());
+                intent.putExtra("idCuaHang", diadiem.getShopID());
 
                 startActivity(intent);
 

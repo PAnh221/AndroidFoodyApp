@@ -108,7 +108,19 @@ public class MainActivity extends AppCompatActivity {
 //
         database.QueryData("INSERT INTO Shop VALUES (null, 'Mi cay Sasin', '123/33 Phạm Văn Đồng', '0909887763')");
         database.QueryData("INSERT INTO Shop VALUES (null, 'NHÀ HÀNG TÂY ĐÔ', '05 Lý Thái Tổ, Hưng Phú, Cái Răng, Cần Thơ', '09098863')");
-//        database.QueryData("INSERT INTO Shop VALUES (null, 'Nhà Hàng Hữu Nghị', '68 đường Trưng Nhị, Trà Ôn, Vĩnh Long', '0909887763')");
+
+        database.QueryData("INSERT INTO Product VALUES (null, 'Cá lóc hấp bầu', 'Thơm ngon mời bạn ăn nha!', 129000,1,'MonAn',1)");
+        database.QueryData("INSERT INTO Product VALUES (null, 'Bún bò Huế', 'Thơm ngon mời bạn ăn nha!', 49000,1,'MonAn',1)");
+
+        database.QueryData("INSERT INTO Product VALUES (null, 'Cá lóc hấp bầu', 'Thơm ngon mời bạn ăn nha!', 129000,1,'MonAn',2)");
+        database.QueryData("INSERT INTO Product VALUES (null, 'Bún bò Huế', 'Thơm ngon mời bạn ăn nha!', 49000,1,'MonAn',2)");
+        database.QueryData("INSERT INTO Product VALUES (null, 'Cá lóc hấp bầu', 'Thơm ngon mời bạn ăn nha!', 129000,1,'MonAn',3)");
+        database.QueryData("INSERT INTO Product VALUES (null, 'Bún bò Huế', 'Thơm ngon mời bạn ăn nha!', 49000,1,'MonAn',3)");
+        database.QueryData("INSERT INTO Product VALUES (null, 'Cá lóc hấp bầu', 'Thơm ngon mời bạn ăn nha!', 129000,1,'MonAn',4)");
+        database.QueryData("INSERT INTO Product VALUES (null, 'Bún bò Huế', 'Thơm ngon mời bạn ăn nha!', 49000,1,'MonAn',4)");
+
+
+        //        database.QueryData("INSERT INTO Shop VALUES (null, 'Nhà Hàng Hữu Nghị', '68 đường Trưng Nhị, Trà Ôn, Vĩnh Long', '0909887763')");
 //        database.QueryData("INSERT INTO Shop VALUES (null, 'Nhà Hàng Ngói đỏ', '596 30 thang 4 Str, Cần Thơ', '090983763')");
 
 //        database.QueryData("CREATE TABLE IF NOT EXISTS Shop(ShopID INTEGER PRIMARY KEY AUTOINCREMENT, Name NVARCHAR(200), Address NVARCHAR(200), Phone VARCHAR(12))");

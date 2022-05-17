@@ -106,10 +106,12 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/teal_700"/>
+
     <ListView
-        android:layout_marginTop="5dp"
+        android:id="@+id/lvDanhSachMonAnCuaHang"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
 
     </ListView>
 </LinearLayout>
