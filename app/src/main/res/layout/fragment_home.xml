@@ -1,103 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavoriteListFragment">
+    tools:context=".FavoriteListFragment"
+    android:background="#eee">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="10">
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:padding="10dp">
 
-        <GridLayout
-            android:layout_weight="1"
+
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:columnCount="8"
-            android:rowCount="1"
-            android:background="#cccccc">
-            <Button
-                android:id="@+id/main_layout_back"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:background="@color/white"
-                android:textColor="@color/black"
-                app:backgroundTint="#FFCC00"
-                android:drawableLeft="@drawable/thu_nho"
-                ></Button>
-            <TextView
-                android:text="  Tìm kiếm địa điểm, món ăn..."
-                android:layout_gravity="left"
-                android:layout_columnWeight="7"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/black" />
-        </GridLayout>
-
-
-        <GridLayout
-            android:layout_weight="9"
+            android:layout_height="wrap_content"
+            android:text="Green Food"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:textColor="@color/teal_700" />
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:columnCount="2"
-            android:rowCount="2"
-            android:layout_marginTop="30dp">
+            android:layout_height="wrap_content"
+            android:text="Tặng bạn rất nhiều ưu đãi, thỏa tích đặt món, giao ngay trong 4h!"
+            android:textSize="18sp"
+            android:textColor="@color/teal_700" />
 
-            <Button
-                android:layout_height="150dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="5dp"
-                android:layout_columnWeight="1"
-                android:layout_column="0"
-                android:layout_row="0"
-                android:drawableTop="@mipmap/ic_launcher"
-                android:textColor="@color/black"
-                app:backgroundTint="#FFCC00"
-                android:text="Nổi bật"></Button>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="12dp">
 
-            <Button
-                android:layout_height="150dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_columnWeight="1"
-                android:layout_column="1"
-                android:layout_row="0"
-                android:drawableTop="@mipmap/ic_launcher"
-                android:textColor="@color/black"
-                app:backgroundTint="#FFCC00"
-                android:text="Gần đây"></Button>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/foody2" />
+        </androidx.cardview.widget.CardView>
 
-            <Button
-                android:layout_height="150dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="5dp"
-                android:layout_columnWeight="1"
-                android:layout_column="0"
-                android:layout_row="1"
-                android:drawableTop="@mipmap/ic_launcher"
-                android:textColor="@color/black"
-                app:backgroundTint="#FFCC00"
-                android:text="Khám phá"></Button>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Khuyến mãi đặc biệt!"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/teal_700" />
 
-            <Button
-                android:layout_height="150dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_columnWeight="1"
-                android:layout_column="1"
-                android:layout_row="1"
-                android:drawableTop="@mipmap/ic_launcher"
-                android:textColor="@color/black"
-                app:backgroundTint="#FFCC00"
-                android:text="Yêu thích"></Button>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="5dp">
+                <ImageView
+                    android:layout_width="178dp"
+                    android:layout_height="110dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img1" />
+            </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="5dp">
 
-        </GridLayout>
+                <ImageView
+                    android:layout_width="178dp"
+                    android:layout_height="110dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img2"
+                    android:layout_gravity="right"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="5dp">
+                <ImageView
+                    android:layout_width="178dp"
+                    android:layout_height="110dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img3" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="5dp">
+
+                <ImageView
+                    android:layout_width="178dp"
+                    android:layout_height="110dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img4"
+                    android:layout_gravity="right"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
+
 
 
 </RelativeLayout>
