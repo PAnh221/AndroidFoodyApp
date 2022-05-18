@@ -64,6 +64,29 @@ public class ShopActivity extends AppCompatActivity {
 
         showShopImage(idCuahang);
 
+        lvMonAn.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//               Xử lý sự kiện khi lick vào món ăn
+                Intent intent1 = new Intent(ShopActivity.this, FoodDetail.class);
+//                Lấy món ăn
+                MonAn monAn = monAnAdapter.getItem(i);
+                intent1.putExtra("tenmon", monAn.getName());
+                intent1.putExtra("mota", monAn.getDescription());
+                intent1.putExtra("gia", monAn.getPrice());
+                intent1.putExtra("idMon", monAn.getProID());
+
+                startActivity(intent1);
+                Toast.makeText(ShopActivity.this,"Bạn vừa chọn "+ i, Toast.LENGTH_SHORT).show();
+            }
+        });
+//        imgMon.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(ShopActivity.this,"Bạn vừa chọn "+txtShopName, Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
     }
 
     private void showShopImage(int idCuahang) {

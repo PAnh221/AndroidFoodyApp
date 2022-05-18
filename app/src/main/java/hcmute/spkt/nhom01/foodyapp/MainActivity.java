@@ -94,7 +94,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void createData() {
         database = new Database(this, "foodyappnhom1.sqlite", null, 1);
-
+//        database.QueryData("Drop table Cart");
+//        database.QueryData("Drop table Orders");
+//        database.QueryData("Drop table OrderDetail");
+//        database.QueryData("CREATE TABLE Cart(Id INTEGER PRIMARY KEY AUTOINCREMENT,UserName NVARCHAR(200) NOT NULL REFERENCES Account(Username), ProductId INTEGER NOT NULL REFERENCES Product(Id), Quantity INTEGER NOT NULL DEFAULT 1)");
+//        database.QueryData("CREATE TABLE Orders(Id INTEGER PRIMARY KEY AUTOINCREMENT, OrderPrice FLOAT, DeliveryPrice FLOAT, TotalPrice FLOAT, CarID INTEGER NOT NULL REFERENCES Cart(Id))");
+//        database.QueryData("CREATE TABLE OrderDetail(Id INTEGER PRIMARY KEY AUTOINCREMENT,ProductId INTEGER NOT NULL REFERENCES Product(ProId), OrderId INTEGER NOT NULL REFERENCES Orders(Id),Quantity INTEGER NOT NULL, UnitPrice FLOAT)");
     }
 
     private void AnhXa() {
