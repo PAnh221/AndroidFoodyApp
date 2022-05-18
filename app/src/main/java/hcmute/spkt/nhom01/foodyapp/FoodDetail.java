@@ -6,13 +6,15 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FoodDetail extends AppCompatActivity {
 
-    TextView txtTenMon, txtMoTa, txtGia;
+    TextView txtTenMon, txtMoTa, txtGia, txtSoLuong;
     ImageView imgMon;
     Button btnDatHang;
     @Override
@@ -24,7 +26,7 @@ public class FoodDetail extends AppCompatActivity {
         Intent intent = this.getIntent();
         String tenmon = intent.getStringExtra("tenmon");
         String mota = intent.getStringExtra("mota");
-        String gia = intent.getStringExtra("gia");
+        Float gia = intent.getFloatExtra("gia",0);
         int idMonAn = intent.getIntExtra("idMon", 0);
 
 
@@ -33,8 +35,24 @@ public class FoodDetail extends AppCompatActivity {
 //        Hiển thị thông tin
         txtTenMon.setText(tenmon);
         txtMoTa.setText(mota);
-        txtGia.setText(gia);
+        txtGia.setText(gia.toString());
         shopimgMonAn(idMonAn);
+
+        btnDatHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(FoodDetail.this,"Đặt hàng thành công! "+gia,Toast.LENGTH_SHORT).show();
+                Database database = new Database(FoodDetail.this, "foodyappnhom1.sqlite", null, 1);
+//                database.QueryData("INSERT INTO Orders VALUES (1, 0, 0, 0,1)");
+                database.QueryData("Insert into OrderDetail Values (null,"+ idMonAn+",1,1,"+ gia+")");
+//                database.QueryData("Insert into OrderDetail Values (1,1,1,1,55000)");
+                database.QueryData("Update Orders set OrderPrice = (Select Sum(UnitPrice) From OrderDetail) ");
+                database.QueryData("Update Orders set DeliveryPrice = 20000 Where OrderPrice > 0");
+                database.QueryData("Update Orders set TotalPrice = OrderPrice + DeliveryPrice");
+                database.notify();
+
+            }
+        });
     }
 
     private void shopimgMonAn(int idMonAn) {
@@ -53,5 +71,7 @@ public class FoodDetail extends AppCompatActivity {
         txtMoTa = findViewById(R.id.txtMoTaMonAn);
         txtGia = findViewById(R.id.txtGia);
         imgMon = findViewById(R.id.imgMon);
+        btnDatHang = findViewById(R.id.btnDatHang);
+        txtSoLuong = findViewById(R.id.txtSoLuong);
     }
 }

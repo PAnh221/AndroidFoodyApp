@@ -68,7 +68,7 @@
         <TextView
             android:layout_marginTop="5dp"
             android:layout_marginLeft="15dp"
-            android:id="@+id/txtGioMoCuaAnhXa"
+            android:id="@+id/txtTenKhachHang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="7:00 - 22:00 hàng ngày."
@@ -90,7 +90,7 @@
         <TextView
             android:layout_marginTop="5dp"
             android:layout_marginLeft="15dp"
-            android:id="@+id/txtDanhGiaAnhXa"
+            android:id="@+id/txtSoDienThoai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="4.5 sao (20 lượt đánh giá)."

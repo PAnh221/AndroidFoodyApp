@@ -52,7 +52,7 @@
         <TextView
             android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp"
-            android:id="@+id/txtGioMoCuaAnhXa"
+            android:id="@+id/txtTenKhachHang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mai Thanh Nhã"
@@ -74,7 +74,7 @@
         <TextView
             android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp"
-            android:id="@+id/txtDanhGiaAnhXa"
+            android:id="@+id/txtSoDienThoai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0965163425"
@@ -90,11 +90,12 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/teal_700"/>
-<!--    <ListView-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content">-->
-<!--    </ListView>-->
+    <ListView
+        android:id="@+id/lvDanhSachThanhToan"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -184,14 +185,16 @@
             android:text="Tiền mặt"
             android:textSize="20sp" />
     </LinearLayout>
+
     <Button
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:id="@+id/btnThanhToan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
         android:backgroundTint="@color/teal_700"
-        android:textSize="18sp"
-        android:text="Đặt hàng"/>
+        android:text="Thanh Toán"
+        android:textSize="18sp" />
 
 </LinearLayout>

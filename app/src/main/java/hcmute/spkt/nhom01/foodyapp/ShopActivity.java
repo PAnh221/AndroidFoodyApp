@@ -12,15 +12,10 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-
-import java.sql.Blob;
 
 import hcmute.spkt.nhom01.foodyapp.adapter.MonAnAdapter;
-import hcmute.spkt.nhom01.foodyapp.models.DiaDiem;
 import hcmute.spkt.nhom01.foodyapp.models.MonAn;
-import hcmute.spkt.nhom01.foodyapp.models.Shop;
 
 public class ShopActivity extends AppCompatActivity {
     TextView txtShopName, txtAddress, txtPhone;
@@ -44,7 +39,7 @@ public class ShopActivity extends AppCompatActivity {
 //        Ánh xạ thông tin
         txtShopName = findViewById(R.id.txtTenMon);
         txtAddress = findViewById(R.id.txtDiaChiAnhXa);
-        txtPhone = findViewById(R.id.txtDanhGiaAnhXa);
+        txtPhone = findViewById(R.id.txtSoDienThoai);
         lvMonAn = findViewById(R.id.lvDanhSachMonAnCuaHang);
         imgMon = findViewById(R.id.imgMon);
 
@@ -77,16 +72,8 @@ public class ShopActivity extends AppCompatActivity {
                 intent1.putExtra("idMon", monAn.getProID());
 
                 startActivity(intent1);
-                Toast.makeText(ShopActivity.this,"Bạn vừa chọn "+ i, Toast.LENGTH_SHORT).show();
             }
         });
-//        imgMon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(ShopActivity.this,"Bạn vừa chọn "+txtShopName, Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
     }
 
     private void showShopImage(int idCuahang) {
